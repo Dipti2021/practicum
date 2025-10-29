@@ -1,16 +1,14 @@
-// Show only the selected section
 function showSection(sectionId) {
-  const sections = document.querySelectorAll(".content-section, #landing");
-  sections.forEach((sec) => {
-    if (sec.id === sectionId) sec.style.display = "block";
-    else sec.style.display = "none";
-  });
+  // Hide all sections including landing
+  const allSections = document.querySelectorAll("section");
+  allSections.forEach((sec) => (sec.style.display = "none"));
 
-  // Scroll to top when a section is shown
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  // Show the clicked section
+  const section = document.getElementById(sectionId);
+  if (section) section.style.display = "block";
 }
 
-// Show landing page initially
-document.addEventListener("DOMContentLoaded", () => {
+// Show landing page by default
+window.onload = function () {
   showSection("landing");
-});
+};
