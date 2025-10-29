@@ -11,30 +11,41 @@
 
     <!-- Navbar -->
     <nav>
-        <div class="nav-logo">
-            <img src="assets/Abu_Dhabi_University.png" alt="School Logo" onclick="showSection('landing')">
-        </div>
         <ul>
-            <li><a href="#" onclick="showSection('about')">About Me</a></li>
-            <li><a href="#" onclick="showSection('teaching-admin')">Teaching & Admin</a></li>
-            <li><a href="#" onclick="showSection('gallery')">Gallery</a></li>
-            <li><a href="#" onclick="showSection('key-learnings')">Key Learnings</a></li>
+            <li><a href="#" onclick="showSection('about')">My Story</a></li>
+            <li><a href="#" onclick="showSection('teaching-admin')">Experiences</a></li>
+    
+            <!-- Center Logo -->
+            <li class="nav-logo-center">
+                <a href="#" onclick="showSection('landing')">
+                    <img src="assets/Abu_Dhabi_University.png" alt="ADU Logo">
+                </a>
+            </li>
+    
+            <li><a href="#" onclick="showSection('gallery')">Theory to Practice</a></li>
+            <li><a href="#" onclick="showSection('key-learnings')">Reflections & Conclusions</a></li>
         </ul>
     </nav>
+    
 
     <!-- Landing Page -->
     <section id="landing">
         <div class="landing-content">
-          <h1>PGDE Practicum</h1>
-          <h2>Summit International School</h2>
+            <h1 class="edc-line">EDC 481</h1>
+            <h1 class="practicum-line">PGDE Practicum</h1>
+            <h2>Summit International School</h2>
       
-          <p class="submitted-to-text">Submitted to Ms. Kesha Oliver</p>
-          <br>
-          <br>
-          <br>
-      
-          <h3 class="submitted-by-heading">Submitted By:</h3>
-          <p class="submitted-by-text">Dipti Razdan (1101823)</p>
+            <div class="submitted-section">
+                <div class="submitted-left">
+                    Submitted By:<br>Dipti Razdan (1101823)
+                </div>
+                <div class="submitted-center">
+                    <img src="assets/adu.jpeg" alt="ADU Logo">
+                </div>
+                <div class="submitted-right">
+                    Submitted To:<br>Ms. Kesha Oliver
+                </div>
+            </div>
         </div>
       </section>
 
