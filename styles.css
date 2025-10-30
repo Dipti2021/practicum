@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #f9f9f9;
+  background: url('assets/regal.png');
   color: #333;
   line-height: 1.6;
 }
@@ -332,6 +332,83 @@ h1.practicum-line {
 }
 
 .photo-gallery img:hover { transform: scale(1.05); }
+
+/* ===== Theory to Practice ===== */
+.theory-blocks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.theory-card {
+  background: linear-gradient(135deg, #fff, #fdf5f3);
+  border: 1px solid #ffd6cc;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.theory-card:nth-child(2) { animation-delay: 0.2s; }
+.theory-card:nth-child(3) { animation-delay: 0.4s; }
+
+.theory-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(255,111,97,0.2);
+}
+
+.theory-header h3 {
+  font-size: 22px;
+  color: #ff6f61;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.theory-card ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.theory-evidence {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.theory-evidence img {
+  width: 45%;
+  min-width: 200px;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.theory-evidence img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.theory-reflection {
+  font-style: italic;
+  color: #555;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media(max-width:768px) {
+  .theory-blocks-container { grid-template-columns: 1fr; }
+  .theory-evidence img { width: 100%; max-width: 400px; }
+}
+
 
 /* ===== Key Learnings ===== */
 .content-section h3 {
