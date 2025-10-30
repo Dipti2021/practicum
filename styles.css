@@ -50,7 +50,7 @@ nav ul li a:hover {
 }
 
 .nav-logo-center img {
-  width: 70px;
+  width: 90px;
   cursor: pointer;
   border-radius: 10px;
   transition: transform 0.3s;
@@ -130,7 +130,7 @@ h1.practicum-line {
 }
 
 .submitted-center img {
-  width: 150px;
+  width: 300px;
   border-radius: 15px;
   box-shadow: 0 0 15px #fff, 0 0 30px #ff6f61;
   margin-top: -50px;
@@ -401,6 +401,50 @@ h1.practicum-line {
   color: #555;
   margin-top: 15px;
   text-align: center;
+}
+
+
+/* ===== Reflections & Conclusions ===== */
+.reflections-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.reflection-card {
+    background: linear-gradient(135deg, #fff, #fff8f5);
+    border: 1px solid #ffd6cc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.reflection-card:nth-child(1) { animation-delay: 0.1s; }
+.reflection-card:nth-child(2) { animation-delay: 0.3s; }
+.reflection-card:nth-child(3) { animation-delay: 0.5s; }
+
+.reflection-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(255,111,97,0.2);
+}
+
+.reflection-card h3 {
+    color: #ff6f61;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.reflection-card ul {
+    margin-left: 20px;
+}
+
+@media(max-width:768px){
+    .reflections-container { grid-template-columns: 1fr; }
 }
 
 /* Responsive adjustments */
