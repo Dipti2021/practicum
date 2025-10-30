@@ -139,10 +139,10 @@ h1.practicum-line {
 @keyframes sparkle {
   0% { text-shadow: 2px 2px 5px #fff, 0 0 8px #ff6f61, 0 0 15px #ff6f61; }
   50% { text-shadow: 2px 2px 6px #fff, 0 0 12px #fff, 0 0 25px #ff6f61; }
-  100% { text-shadow: 2px 2 7px #fff, 0 0 15px #fff, 0 0 30px #ff6f61; }
+  100% { text-shadow: 2px 2px 7px #fff, 0 0 15px #fff, 0 0 30px #ff6f61; }
 }
 
-/* ===== General Sections ===== */
+/* ===== General Section Styling ===== */
 .content-section {
   padding: 40px 20px;
   display: none;
@@ -172,7 +172,9 @@ h1.practicum-line {
 
 /* ===== About & Experience Cards ===== */
 .about-blocks-container,
-.experience-blocks-container {
+.experience-blocks-container,
+.theory-blocks-container,
+.reflections-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
@@ -180,7 +182,9 @@ h1.practicum-line {
 }
 
 .about-block,
-.experience-card {
+.experience-card,
+.theory-card,
+.reflection-card {
   background: linear-gradient(135deg, #fff, #fff5f3);
   border: 1px solid #ffd6cc;
   border-radius: 15px;
@@ -193,18 +197,26 @@ h1.practicum-line {
 }
 
 .about-block:nth-child(2),
-.experience-card:nth-child(2) { animation-delay: 0.2s; }
+.experience-card:nth-child(2),
+.theory-card:nth-child(2),
+.reflection-card:nth-child(2) { animation-delay: 0.2s; }
+
 .about-block:nth-child(3),
-.experience-card:nth-child(3) { animation-delay: 0.4s; }
+.experience-card:nth-child(3),
+.theory-card:nth-child(3),
+.reflection-card:nth-child(3) { animation-delay: 0.4s; }
 
 .about-block:hover,
-.experience-card:hover {
+.experience-card:hover,
+.theory-card:hover,
+.reflection-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(255,111,97,0.2);
 }
 
 .about-header,
-.experience-header {
+.experience-header,
+.theory-header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,7 +229,9 @@ h1.practicum-line {
 }
 
 .about-block h3,
-.experience-header h3 {
+.experience-header h3,
+.theory-header h3,
+.reflection-card h3 {
   font-size: 22px;
   color: #ff6f61;
   margin: 0;
@@ -227,13 +241,17 @@ h1.practicum-line {
 }
 
 .about-block ul,
-.experience-card ul {
+.experience-card ul,
+.theory-card ul,
+.reflection-card ul {
   margin-left: 20px;
   margin-bottom: 15px;
 }
 
+/* ===== Images & Evidence ===== */
 .about-images,
-.experience-evidence {
+.experience-evidence,
+.theory-evidence {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -242,15 +260,19 @@ h1.practicum-line {
 }
 
 .about-images figure,
-.experience-evidence img {
+.experience-evidence img,
+.theory-evidence img {
   width: 45%;
   min-width: 200px;
   text-align: center;
 }
 
 .about-images img,
-.experience-evidence img {
+.experience-evidence img,
+.theory-evidence img {
   width: 100%;
+  max-height: 200px;
+  object-fit: cover;
   border-radius: 12px;
   border: 3px solid #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -259,7 +281,8 @@ h1.practicum-line {
 }
 
 .about-images img:hover,
-.experience-evidence img:hover {
+.experience-evidence img:hover,
+.theory-evidence img:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
@@ -271,7 +294,8 @@ h1.practicum-line {
   font-style: italic;
 }
 
-.experience-reflection {
+.experience-reflection,
+.theory-reflection {
   font-style: italic;
   color: #555;
   margin-top: 15px;
@@ -316,7 +340,7 @@ h1.practicum-line {
   transform: scale(1.05);
 }
 
-/* ===== Gallery ===== */
+/* ===== Gallery: Images & Videos ===== */
 .photo-gallery {
   display: flex;
   justify-content: center;
@@ -324,140 +348,21 @@ h1.practicum-line {
   flex-wrap: wrap;
 }
 
-.photo-gallery img {
+.photo-gallery img,
+.photo-gallery .gallery-video {
   width: 300px;
+  height: 200px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-
-.photo-gallery img:hover { transform: scale(1.05); }
-
-/* ===== Theory to Practice ===== */
-.theory-blocks-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.theory-card {
-  background: linear-gradient(135deg, #fff, #fdf5f3);
-  border: 1px solid #ffd6cc;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
-}
-
-.theory-card:nth-child(2) { animation-delay: 0.2s; }
-.theory-card:nth-child(3) { animation-delay: 0.4s; }
-
-.theory-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(255,111,97,0.2);
-}
-
-.theory-header h3 {
-  font-size: 22px;
-  color: #ff6f61;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.theory-card ul {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-
-.theory-evidence {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.theory-evidence img {
-  width: 45%;
-  min-width: 200px;
-  border-radius: 12px;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  cursor: pointer;
+  object-fit: cover;
   transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
-.theory-evidence img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-.theory-reflection {
-  font-style: italic;
-  color: #555;
-  margin-top: 15px;
-  text-align: center;
-}
-
-
-/* ===== Reflections & Conclusions ===== */
-.reflections-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.reflection-card {
-    background: linear-gradient(135deg, #fff, #fff8f5);
-    border: 1px solid #ffd6cc;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s forwards;
-}
-
-.reflection-card:nth-child(1) { animation-delay: 0.1s; }
-.reflection-card:nth-child(2) { animation-delay: 0.3s; }
-.reflection-card:nth-child(3) { animation-delay: 0.5s; }
-
-.reflection-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(255,111,97,0.2);
-}
-
-.reflection-card h3 {
-    color: #ff6f61;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.reflection-card ul {
-    margin-left: 20px;
-}
-
-@media(max-width:768px){
-    .reflections-container { grid-template-columns: 1fr; }
-}
-
-/* Responsive adjustments */
-@media(max-width:768px) {
-  .theory-blocks-container { grid-template-columns: 1fr; }
-  .theory-evidence img { width: 100%; max-width: 400px; }
-}
-
-
-/* ===== Key Learnings ===== */
-.content-section h3 {
-  margin-top: 20px;
-  color: #ff6f61;
+.photo-gallery img:hover,
+.photo-gallery .gallery-video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
 /* ===== Animations ===== */
@@ -484,8 +389,13 @@ h1.practicum-line {
   nav ul { flex-direction: column; gap: 10px; }
 
   .about-blocks-container,
-  .experience-blocks-container { grid-template-columns: 1fr; }
+  .experience-blocks-container,
+  .theory-blocks-container,
+  .reflections-container { grid-template-columns: 1fr; }
 
   .about-images figure,
-  .experience-evidence img { width: 100%; max-width: 400px; }
+  .experience-evidence img,
+  .theory-evidence img,
+  .photo-gallery img,
+  .photo-gallery .gallery-video { width: 100%; max-width: 400px; height: auto; }
 }
