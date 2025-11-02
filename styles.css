@@ -283,7 +283,7 @@ h1.practicum-line {
 .about-images img:hover,
 .experience-evidence img:hover,
 .theory-evidence img:hover {
-  transform: scale(1.08);
+  transform: scale(2);
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
