@@ -17,12 +17,13 @@ window.onload = function () {
   showSection("landing");
 };
 
-// ===== Image Lightbox for About Me =====
-const aboutImages = document.querySelectorAll(".about-text img");
+// ===== Image Lightbox for About Me, Experience, Theory =====
+const allImages = document.querySelectorAll(
+  ".about-images img, .experience-evidence img, .theory-evidence img"
+);
 
-aboutImages.forEach((img) => {
+allImages.forEach((img) => {
   img.addEventListener("click", () => {
-    // Create overlay
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
     overlay.style.top = 0;
@@ -36,7 +37,6 @@ aboutImages.forEach((img) => {
     overlay.style.cursor = "pointer";
     overlay.style.zIndex = 2000;
 
-    // Create enlarged image
     const enlargedImg = document.createElement("img");
     enlargedImg.src = img.src;
     enlargedImg.style.maxWidth = "90%";
@@ -45,7 +45,6 @@ aboutImages.forEach((img) => {
     enlargedImg.style.boxShadow = "0 4px 15px rgba(0,0,0,0.5)";
     overlay.appendChild(enlargedImg);
 
-    // Close on click
     overlay.addEventListener("click", () => {
       document.body.removeChild(overlay);
     });
