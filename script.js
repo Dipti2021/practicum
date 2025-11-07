@@ -1,9 +1,7 @@
-// ===== Show/Hide Sections =====
+// Show/Hide Sections
 function showSection(sectionId) {
   const allSections = document.querySelectorAll("section");
-  allSections.forEach((sec) => {
-    sec.style.display = "none";
-  });
+  allSections.forEach((sec) => (sec.style.display = "none"));
 
   const section = document.getElementById(sectionId);
   if (section) {
@@ -13,42 +11,26 @@ function showSection(sectionId) {
 }
 
 // Show landing page by default
-window.onload = function () {
-  showSection("landing");
-};
+window.onload = () => showSection("landing");
 
-// ===== Image Lightbox for About Me, Experience, Theory =====
-const allImages = document.querySelectorAll(
-  ".about-images img, .experience-evidence img, .theory-evidence img"
-);
-
-allImages.forEach((img) => {
-  img.addEventListener("click", () => {
-    const overlay = document.createElement("div");
-    overlay.style.position = "fixed";
-    overlay.style.top = 0;
-    overlay.style.left = 0;
-    overlay.style.width = "100%";
-    overlay.style.height = "100%";
-    overlay.style.backgroundColor = "rgba(0,0,0,0.8)";
-    overlay.style.display = "flex";
-    overlay.style.justifyContent = "center";
-    overlay.style.alignItems = "center";
-    overlay.style.cursor = "pointer";
-    overlay.style.zIndex = 2000;
-
-    const enlargedImg = document.createElement("img");
-    enlargedImg.src = img.src;
-    enlargedImg.style.maxWidth = "90%";
-    enlargedImg.style.maxHeight = "90%";
-    enlargedImg.style.borderRadius = "15px";
-    enlargedImg.style.boxShadow = "0 4px 15px rgba(0,0,0,0.5)";
-    overlay.appendChild(enlargedImg);
-
-    overlay.addEventListener("click", () => {
-      document.body.removeChild(overlay);
+// Image Lightbox
+document
+  .querySelectorAll(
+    ".about-images img, .experience-evidence img, .photo-gallery img"
+  )
+  .forEach((img) => {
+    img.addEventListener("click", () => {
+      const overlay = document.createElement("div");
+      overlay.style.cssText =
+        "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;justify-content:center;align-items:center;cursor:pointer;z-index:2000;";
+      const enlarged = document.createElement("img");
+      enlarged.src = img.src;
+      enlarged.style.cssText =
+        "max-width:90%;max-height:90%;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.5);";
+      overlay.appendChild(enlarged);
+      overlay.addEventListener("click", () =>
+        document.body.removeChild(overlay)
+      );
+      document.body.appendChild(overlay);
     });
-
-    document.body.appendChild(overlay);
   });
-});
