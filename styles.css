@@ -34,10 +34,10 @@ section {
   font-family: 'Poppins', sans-serif;
 }
 
-/* NAVBAR */
+/* --- NAVBAR REFINEMENT --- */
 nav {
   position: sticky;
-  top: 14px;
+  top: 10px; 
   z-index: 1200;
   display: flex;
   justify-content: center;
@@ -49,57 +49,56 @@ nav ul {
   max-width: 1200px;
   list-style: none;
   display: flex;
-  gap: 16px;
+  gap: 12px; 
   align-items: center;
   background: linear-gradient(90deg, rgba(0,33,71,0.95), rgba(179,27,27,0.9));
-  padding: 8px 18px;
-  border-radius: 14px;
-  box-shadow: 0 10px 36px rgba(2,18,50,0.14);
-  align-items: center;
+  padding: 6px 16px; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 30px rgba(2,18,50,0.12); 
 }
 
 /* Logo wrapper so logo is visible on dark bg */
 .nav-logo-center {
   background: rgba(255,255,255,0.95);
-  padding: 6px;
-  border-radius: 10px;
+  padding: 5px; 
+  border-radius: 8px; 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 26px rgba(2,18,50,0.12);
-  margin-right: 6px;
+  box-shadow: 0 6px 20px rgba(2,18,50,0.1);
+  margin-right: 4px;
 }
 
 .nav-logo-center img {
-  width: 76px;
+  width: 70px; 
   height: auto;
   display: block;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: transform .28s ease, filter .28s ease;
 }
 
 /* logo hover glow */
 .nav-logo-center img:hover {
-  transform: translateY(-4px) scale(1.03);
-  filter: drop-shadow(0 12px 30px rgba(179,27,27,0.28));
+  transform: translateY(-2px) scale(1.02); 
+  filter: drop-shadow(0 8px 20px rgba(179,27,27,0.2));
 }
 
 /* Links */
 nav li a {
   color: #fff;
   text-decoration: none;
-  padding: 10px 14px;
-  border-radius: 9px;
+  padding: 8px 12px; 
+  border-radius: 7px;
   font-weight: 600;
   transition: all .22s ease;
-  font-size: 15px;
+  font-size: 14px; 
 }
 
 nav li a:hover {
   background: linear-gradient(90deg, var(--warm-accent), var(--adu-red));
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(2,18,50,0.12);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(2,18,50,0.1);
 }
 
 nav li a.active {
@@ -109,7 +108,7 @@ nav li a.active {
 
 /* LANDING */
 #landing {
-  min-height: 82vh;
+  min-height: 80vh;
   margin: 18px auto;
   max-width: 1200px;
   border-radius: 16px;
@@ -275,12 +274,13 @@ h1.practicum-line {
   margin:0;
 }
 
-/* image grids */
+/* --- IMAGE SIZE ADJUSTMENT (LARGER) --- */
 .about-images,
 .experience-evidence,
 .theory-evidence {
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  /* Reverting to original grid template columns for images, they will adjust based on height */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 12px;
   margin-top: 12px;
 }
@@ -289,14 +289,14 @@ h1.practicum-line {
 .experience-evidence img,
 .theory-evidence img {
   width:100%;
-  height: 150px;
+  height: 220px; /* SIGNIFICANTLY INCREASED HEIGHT */
   object-fit: cover;
   border-radius: 10px;
   transition: transform .26s ease, box-shadow .26s ease;
   cursor: pointer;
 }
 
-/* stronger hover zoom for images */
+/* Stronger hover zoom for images */
 .about-images img:hover,
 .experience-evidence img:hover,
 .theory-evidence img:hover {
@@ -304,35 +304,57 @@ h1.practicum-line {
   box-shadow: 0 12px 36px rgba(2,18,50,0.12);
 }
 
-/* btn */
+/* --- BUTTON SIZE ADJUSTMENT --- */
 .btn {
   display:inline-block;
   background: linear-gradient(90deg, var(--adu-red), var(--warm-accent));
   color: #fff;
-  padding: 10px 16px;
+  padding: 8px 14px; 
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600; 
+  font-size: 14px; 
   transition: transform .18s ease, box-shadow .18s ease;
-  box-shadow: 0 10px 30px rgba(179,27,27,0.12);
+  box-shadow: 0 8px 24px rgba(179,27,27,0.1); 
 }
 
 .btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(2,18,50,0.12);
+  transform: translateY(-3px); 
+  box-shadow: 0 16px 40px rgba(2,18,50,0.1);
 }
 
-/* photo gallery */
+/* Styling for button containers (to align buttons nicely) */
+.experience-evidence, .theory-evidence {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.experience-evidence figure, .theory-evidence figure {
+    flex: 1 1 45%; 
+    max-width: 300px;
+}
+
+.experience-evidence .btn, .theory-evidence .btn {
+    flex: 0 0 auto; 
+    text-align: center;
+    margin: 5px 0;
+}
+
+
+/* --- PHOTO GALLERY ADJUSTMENT (LARGER) --- */
 .photo-gallery {
   display:flex;
   flex-wrap:wrap;
-  gap:14px;
+  gap:16px; /* Increased gap slightly */
   justify-content:center;
 }
 
 .photo-gallery img {
-  width:300px;
-  height:180px;
+  width:360px; /* INCREASED WIDTH */
+  height:240px; /* INCREASED HEIGHT */
   object-fit:cover;
   border-radius:10px;
   box-shadow:0 12px 34px rgba(2,18,50,0.06);
@@ -387,18 +409,22 @@ h1.practicum-line {
   h1.edc-line { font-size: 56px; }
   h1.practicum-line { font-size: 34px; }
   .submitted-center img { width: 140px; }
-  nav ul { padding: 10px; gap: 8px; }
+  nav ul { padding: 8px; gap: 6px; } 
+  nav li a { font-size: 13px; padding: 6px 10px; }
 }
 
 @media(max-width: 680px) {
-  .photo-gallery img { width: 48%; height: 140px; }
-  .about-images img, .experience-evidence img, .theory-evidence img { height: 120px; }
+  .photo-gallery img { width: 48%; height: 180px; } /* Adjusting gallery image height for mobile */
+  .about-images img, .experience-evidence img, .theory-evidence img { height: 180px; } /* Slightly reduced on mid-size mobile */
   .submitted-left, .submitted-right { font-size: 16px; }
-  .nav-logo-center img { width: 64px; }
+  .nav-logo-center img { width: 60px; } 
+  .experience-evidence figure, .theory-evidence figure {
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
 }
 
 @media(max-width: 420px) {
   .photo-gallery img { width: 100%; height: auto; }
-  .submitted-section { gap: 12px; }
   .content-section { padding: 20px 14px; margin: 12px; }
 }
